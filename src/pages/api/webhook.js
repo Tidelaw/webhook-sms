@@ -7,6 +7,7 @@ export default async function handler(req, res) {
 
       let webhook_data = req.body
 
+      console.log(webhook_data)
       console.log(webhook_data.description)
 
       // const client = require('twilio')(process.env.accountSid, process.env.authToken);
@@ -17,6 +18,7 @@ export default async function handler(req, res) {
       //     })
       //     .then(message => console.log(message.sid))
       //     .done();
+      res.status(200)
     };
 
   }
