@@ -1,7 +1,5 @@
 
 
-import { supabase } from '../../../supabaseClient';
-
 export default async function handler(req, res) {
 
   try {
@@ -9,13 +7,16 @@ export default async function handler(req, res) {
 
       let webhook_data = req.body
 
-      const { data, error } = await supabase
-        .from('txs')
-        .upsert(webhook_data)
-      res.status(200).json("success")
+      console.log(webhook_data.description)
 
-      console.log(data, error)
-
+      // const client = require('twilio')(process.env.accountSid, process.env.authToken);
+      
+      // client.messages
+      //     .create({
+      //                 to: `+${process.env.number}`
+      //     })
+      //     .then(message => console.log(message.sid))
+      //     .done();
     };
 
   }
